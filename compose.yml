@@ -87,6 +87,18 @@ services:
       - ./redis/redis.conf:/usr/local/etc/redis/redis.conf:cache
     restart: unless-stopped
 
+  maildev:
+    container_name: maildev
+    image: maildev/maildev:2.0.5
+    ports:
+      - "1080:1080"
+      - "1025:1025"    
+    networks:
+      - bookings
+
+networks:
+  bookings:
+
   # elasticsearch:
   #   image: docker.elastic.co/elasticsearch/elasticsearch:5.4.0
   #   container_name: elasticsearch_540
