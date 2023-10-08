@@ -72,6 +72,8 @@ services:
       - ./www/html/:/var/www/html/:cache #per sharare la cartella del progetto
       - ./socket/:/socket/:cache #per sharare i socket tra php e nginx
       - ./www/html/jsPlugins/dist/:/var/www/html/jsPlugins #per sharare i file compilati da webpack a php e nginx
+    networks:
+      - ticket
     #command: "true"
   
   #docker compose exec redis  sh
@@ -94,10 +96,10 @@ services:
       - "1080:1080"
       - "1025:1025"    
     networks:
-      - bookings
+      - ticket
 
 networks:
-  bookings:
+  ticket:
 
   # elasticsearch:
   #   image: docker.elastic.co/elasticsearch/elasticsearch:5.4.0
