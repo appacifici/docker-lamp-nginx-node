@@ -7,17 +7,30 @@ importDb() {
 	echo "---------   END: IMPORT MYSQL DB $1 < $2 ---------"
 }
 
-init() {				
+init() {	
+	cd project && symfony composer install
+	echo "dipendenze installate . . . "
+
 	sh /usr/local/bin/docker-php-entrypoint php-fpm	&
+
 	mysql -h$MYSQL_HOST -P$MYSQL_TCP_PORT -u$MYSQL_USER -p$MYSQL_ROOT_PASSWORD -e "CREATE DATABASE IF NOT EXISTS $MYSQL_DATABASE"		
 	echo "mysql -h$MYSQL_HOST -P$MYSQL_TCP_PORT -u$MYSQL_USER -p$MYSQL_ROOT_PASSWORD -e 'CREATE DATABASE IF NOT EXISTS $MYSQL_DATABASE'"		
+
 	ln -sf dump/* /mysql-dump/.
+	echo "dump/* /mysql-dump/."
+
 	chmod -R 777 /socket
-	gulp --gulpfile=/gulp/gulpfile.js watchSass &	
+	echo "chmod -R 777 /socket"
+
+	chmod -R 777 var
+	echo "chmod -R 777 var"
+	
     #tail -f /var/www/html/project/$TAIL_FILE_DEBUG
 
-	symfony console doctrine:migrations:migrate
+	symfony console doctrine:migrations:migrate --no-interaction
+	echo "symfony console doctrine:migrations:migrate --no-interaction"
 
+	gulp --gulpfile=/gulp/gulpfile.js watchSass &	
 	tail -f
 }
 

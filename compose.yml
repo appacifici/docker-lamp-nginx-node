@@ -40,7 +40,7 @@ services:
       - mysql
     links: #per rendere visibili gli altri container
       - mysql
-      # - elasticsearch
+      - maildev
     volumes:
       - ./mysql/dump/:/mysql-dump/:cache
       - ./gulp/:/gulp/:cache
@@ -94,9 +94,7 @@ services:
     image: maildev/maildev:2.0.5
     ports:
       - "1080:1080"
-      - "1025:1025"    
-    networks:
-      - ticket
+      - "1025:1025"        
 
 networks:
   ticket:
