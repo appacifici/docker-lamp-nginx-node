@@ -1,7 +1,5 @@
 # Ticket
 
-## TODO Creare costanti di classe
-
 ## Repository
 Leggi guida: [repository](repository.md)
 
@@ -11,8 +9,8 @@ Leggi guida: [installazione](install.md)
 ## Entità
 Leggi guida: [entità](entity.md)
 
-# Info
-Leggi guida: [infoormazioni](info.md)
+## Info
+Leggi guida: [informazioni](info.md)
 
 ## Swagger Chiamate
 Lo swagger presenta degli errori sui campi required da risolvere, e un incongruenza sul formato di risposta di array (per mancanza di tempo)!!

@@ -2,24 +2,15 @@ Indietro [ticket.md](ticket.md)
 
 # Installazione
 
-### Creare directory che contiene il progetto
-
-```bash
-    mkdir /home/{user}/ticket
-```
-
-### Spostarsi nella directory
-```bash
-    cd /home/{user}/ticket
-```
-
 ### Clonare i repository necessari
 
 ```bash
+
+#Evitare questo passaggio se gia clonato questo repository dell'infrastruttura docker necessaria
 git clone git@github.com:appacifici/docker-lamp-nginx-node.git
 cd docker-lamp-nginx-node
 
-#Il repository
+#Clonare il repository del progetto ticket
 cd www/html
 git clone git@github.com:appacifici/ticket-backend-symfony.git
 ln -s ticket-backend-symfony project
