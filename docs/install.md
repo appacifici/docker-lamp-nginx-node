@@ -27,8 +27,8 @@ ln -s ticket-backend-symfony project
 
 ### Creazione e permessi scrittura cartelle var Symfony
 ```bash
-mkdir  www/html/ticket-backend-symfony/var
-chmod -R 777 www/html/ticket-backend-symfony/var
+mkdir  ticket-backend-symfony/var
+chmod -R 777 ticket-backend-symfony/var
 ```
 
 ### Avvio container docker
