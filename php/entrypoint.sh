@@ -56,29 +56,30 @@ case "$1" in
 	psalm)
 #		update_php_dependences
 
-		./vendor/bin/psalm
+		cd project && ./vendor/bin/psalm
 		;;
 
 	cs)
 #		update_php_dependences
 
+		cd project && ./vendor/bin/phpcs --config-set show_warnings 0
 		./vendor/bin/phpcs -n
 		;;
 
 	csgithub)
 #		update_php_dependences
 
-		./vendor/bin/phpcs --report=summary -n -p
+		cd project && ./vendor/bin/phpcs --report=summary -n -p
 		;;
 
 	cbf)
 #		update_php_dependences
 
-		./vendor/bin/phpcbf
+		cd project && ./vendor/bin/phpcbf
 		;;
 
 	pstan)
-		./vendor/bin/phpstan analyse
+		cd project && ./vendor/bin/phpstan analyse
 		;;
 
 	bash)

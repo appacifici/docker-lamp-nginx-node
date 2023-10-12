@@ -1,0 +1,556 @@
+{
+	"info": {
+		"_postman_id": "389e5af5-3774-40e3-839a-37569e608c60",
+		"name": "TicketCollections",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sector",
+			"item": [
+				{
+					"name": "Delete Sector",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{serverIp}}/ws/sector/9",
+							"host": [
+								"{{serverIp}}"
+							],
+							"path": [
+								"ws",
+								"sector",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Sector",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverIp}}/ws/sector",
+							"host": [
+								"{{serverIp}}"
+							],
+							"path": [
+								"ws",
+								"sector"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sector",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverIp}}/ws/sector/7",
+							"host": [
+								"{{serverIp}}"
+							],
+							"path": [
+								"ws",
+								"sector",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert Sector",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Curva Sud\", \n    \"total\": 5000,\n    \"purchased\": 100,  \n    \"placeType\": 2,  \n    \"eventId\": 1,  \n    \"location\": 1,  \n}"
+						},
+						"url": {
+							"raw": "{{serverIp}}/ws/sector",
+							"host": [
+								"{{serverIp}}"
+							],
+							"path": [
+								"ws",
+								"sector"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Sector",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"line\" : \"77\", \n    \"number\": \"1\",\n    \"price\": 300,  \n    \"free\": 1,  \n    \"eventId\": 1,  \n    \"sectorId\": 1\n}"
+						},
+						"url": {
+							"raw": "{{serverIp}}/ws/sector/6",
+							"host": [
+								"{{serverIp}}"
+							],
+							"path": [
+								"ws",
+								"sector",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ticket",
+			"item": [
+				{
+					"name": "TicketPusrchase",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 1,\n    \"puschase\":[\n       {\n           \"eventId\": 1,\n           \"placeType\": 2,\n           \"sectorId\": 1,\n           \"placeId\": 1\n       },\n       {\n           \"eventId\": 1,\n           \"sectorId\": 1,\n           \"placeType\": 2,\n           \"placeId\": 2 \n       },\n       {\n           \"eventId\": 1,\n           \"sectorId\": 1,\n           \"placeType\": 2,\n           \"placeId\": 3    \n       },       \n       {\n           \"eventId\": 1,\n           \"sectorId\": 2,\n           \"placeType\": 1 \n        },      \n        {\n           \"eventId\": 2,\n           \"sectorId\": 3,\n           \"placeType\": 1 \n        },      \n        {\n           \"eventId\": 2,\n           \"sectorId\": 3,\n           \"placeType\": 1 \n        }\n   ]\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/ticket/purchase",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"ticket",
+								"purchase"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Place",
+			"item": [
+				{
+					"name": "Get All Place",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverIp}}/ws/place",
+							"host": [
+								"{{serverIp}}"
+							],
+							"path": [
+								"ws",
+								"place"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Place",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverIp}}/ws/place/1",
+							"host": [
+								"{{serverIp}}"
+							],
+							"path": [
+								"ws",
+								"place",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Place",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{serverIp}}/ws/place/3",
+							"host": [
+								"{{serverIp}}"
+							],
+							"path": [
+								"ws",
+								"place",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert Place",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"line\" : 77, \n    \"number\": 1,\n    \"price\": 300,  \n    \"price\": 0,  \n    \"eventId\": 0,  \n    \"sectorId\": 0,  \n}"
+						},
+						"url": {
+							"raw": "{{serverIp}}/ws/place",
+							"host": [
+								"{{serverIp}}"
+							],
+							"path": [
+								"ws",
+								"place"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Place",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"line\" : \"77\", \n    \"number\": \"1\",\n    \"price\": 300,  \n    \"free\": 1,  \n    \"eventId\": 1,  \n    \"sectorId\": 1\n}"
+						},
+						"url": {
+							"raw": "{{serverIp}}/ws/place/6",
+							"host": [
+								"{{serverIp}}"
+							],
+							"path": [
+								"ws",
+								"place",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Location",
+			"item": [
+				{
+					"name": "Get All Location",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverIp}}/ws/location",
+							"host": [
+								"{{serverIp}}"
+							],
+							"path": [
+								"ws",
+								"location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Location",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Renato Zero 100\", \n    \"city\": \"Timperi\",\n    \"date\": \"2024-07-01 21:00:00\"    \n}"
+						},
+						"url": {
+							"raw": "{{serverIp}}/ws/location/3",
+							"host": [
+								"{{serverIp}}"
+							],
+							"path": [
+								"ws",
+								"location",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert Location",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Stadio san siro\", \n    \"address\": \"Via Milano 55\",\n    \"eventId\": \"3\"  \n}"
+						},
+						"url": {
+							"raw": "{{serverIp}}/ws/location",
+							"host": [
+								"{{serverIp}}"
+							],
+							"path": [
+								"ws",
+								"location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Location",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverIp}}/ws/location/1",
+							"host": [
+								"{{serverIp}}"
+							],
+							"path": [
+								"ws",
+								"location",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Location",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{serverIp}}/ws/event/3",
+							"host": [
+								"{{serverIp}}"
+							],
+							"path": [
+								"ws",
+								"event",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "Update Event",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Renato Zero 100\", \n    \"city\": \"Timperi\",\n    \"date\": \"2024-07-01 21:00:00\"    \n}"
+						},
+						"url": {
+							"raw": "{{serverIp}}/ws/event/3",
+							"host": [
+								"{{serverIp}}"
+							],
+							"path": [
+								"ws",
+								"event",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Event",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverIp}}/ws/user",
+							"host": [
+								"{{serverIp}}"
+							],
+							"path": [
+								"ws",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Event",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{serverIp}}/ws/event/3",
+							"host": [
+								"{{serverIp}}"
+							],
+							"path": [
+								"ws",
+								"event",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverIp}}/ws/user/7",
+							"host": [
+								"{{serverIp}}"
+							],
+							"path": [
+								"ws",
+								"user",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert Event",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"ags\", \n    \"surname\": \"Timperi\",\n    \"username\": \"timerao\",\n    \"email\": \"mttimperi@gmail.com\",\n    \"password\": \"123\"\n    }"
+						},
+						"url": {
+							"raw": "{{serverIp}}/ws/user",
+							"host": [
+								"{{serverIp}}"
+							],
+							"path": [
+								"ws",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get All User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverIp}}/ws/user",
+							"host": [
+								"{{serverIp}}"
+							],
+							"path": [
+								"ws",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverIp}}/ws/user/7",
+							"host": [
+								"{{serverIp}}"
+							],
+							"path": [
+								"ws",
+								"user",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Maurizio\", \n    \"surname\": \"Timperi\",\n    \"username\": \"timerao\",\n    \"email\": \"mttimperi@gmailom\",\n    \"password\": \"12\" \n}"
+						},
+						"url": {
+							"raw": "{{serverIp}}/ws/user/2",
+							"host": [
+								"{{serverIp}}"
+							],
+							"path": [
+								"ws",
+								"user",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Insert User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"ags\", \n    \"surname\": \"Timperi\",\n    \"username\": \"timerao\",\n    \"email\": \"mttimperi@gmail.com\",\n    \"password\": \"123\"\n    }"
+						},
+						"url": {
+							"raw": "{{serverIp}}/ws/user",
+							"host": [
+								"{{serverIp}}"
+							],
+							"path": [
+								"ws",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
