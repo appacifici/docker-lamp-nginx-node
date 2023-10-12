@@ -31,10 +31,14 @@ const MAX_EVENT_TRANSACTION  = 2;
 ```
 
 ### purchaseTicket
-oE' il servizio finale che viene invocato dall'endPoint per l'acquisti dei biglietti. In un progetto completo il frontend dovrebbe invocare prima altri endPoint per richiedere i posti e i biglietti disponibili, farli selezionare all'utente, e poi invocare un il servizio che li metta in lock fiche l'utente finisce la selezione di altri biglietti, oppure fino alla scadenza del tempo massimo di lock. Un volta arrivati alla fine questo servizio dovre essere apliato implementando ai controlli già esistenti di disponibilità anche quelli dei biglietti in lock per il tempo prestabilito.
+E' il servizio finale che viene invocato dall'endPoint per l'acquisti dei biglietti. In un progetto completo il frontend dovrebbe invocare prima altri endPoint, per richiedere i posti e i biglietti disponibili, farli selezionare all'utente, e poi invocare il servizio che li metta in lock fiche l'utente finisce la selezione di altri biglietti. 
 
-Questo servizio cosi come pensato potra assere invocato sia per acquistare che per fare il lock dei ticket.
+Oppure riservarli fino alla scadenza del tempo massimo di lock. 
 
-Con un command in cron ogni minuti possiamo recuperare i ticket in lock e se superato il temop massimo renderli nuovamente disponibili.
+Un volta arrivati alla fine, questo servizio dovre essere ampliato implementando, ai controlli già esistenti di disponibilità, anche quelli dei biglietti in lock per il tempo prestabilito.
+
+Questo servizio cosi come pensato potra essere invocato sia per acquistare, sia per fare il lock dei ticket, che per fare controllare le disponibilità, aggiungendo alla struttura di chiamata un parametro "action" per determinare quali delle 3 casistiche sorpa descritte è richiesta.
+
+Con un command in cron ogni minuto possiamo recuperare i ticket in lock e se superato il tempo massimo renderli nuovamente disponibili.
 
 Andrebbe creata entita LockUserTicket, in modo che il frontend anche se l'utente ricarica la pagina ha la visione di quanto tempo rimane alla scadenza e di quali biglietti

@@ -7,6 +7,7 @@ Indietro [ticket.md](ticket.md)
 - Place
 - Ticket
 - Transaction
+- User
 
 ### Migration Creazione Contenuti ( viene lanciata da entrypoint docker )
 ```bash
