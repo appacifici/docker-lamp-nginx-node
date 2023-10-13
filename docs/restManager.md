@@ -1,4 +1,4 @@
-Indietro [ticket.md](ticket.md)
+Indietro [ticket.md](README.md)
 
 # Rest Manager Utilizzo
 Questo servizio creato custom serve a genstire le operazione CRUD semplici sulle entità

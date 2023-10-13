@@ -1,4 +1,4 @@
-Indietro [ticket.md](ticket.md)
+Indietro [ticket.md](README.md)
 
 # Entità Progetto
 - Event
