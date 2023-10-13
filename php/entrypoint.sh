@@ -51,6 +51,14 @@ case "$1" in
 
 	init)
 		init
+		;;
+
+	upInitDataDb)
+		cd project && symfony console doctrine:migrations:execute --up 'DoctrineMigrations\Version20231008214316' --no-interaction
+		;;	
+
+	downInitDataDb)
+		cd project && symfony console doctrine:migrations:execute --down 'DoctrineMigrations\Version20231008214316'  --no-interaction
 		;;	
 
 	psalm)

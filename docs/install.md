@@ -36,3 +36,7 @@ docker compose up  #Option (-d) se si vuole demonizzare
     - Lanciare le migration per
         - Create le tabelle
         - Popolarle di dati iniziali per testare l'app
+
+### Per resettare le migration per riportare il db allo stato iniziale
+
+LEGGI [entity.md](entity.md)
