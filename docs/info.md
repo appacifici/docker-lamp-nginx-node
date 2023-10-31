@@ -20,6 +20,8 @@ Per il progetto ho utilizzato Symfony 6. All'interno del progetto ci sono dei fi
         - src/Service/RestService/* 
 
 ### TicketPurchaseService
+Per i principi SOLID questo servizio dovrebbe occuparti solo dell acquisto, la parte invece dei vincoli di acquisto andrebbe gestita in un servizio separato. Ma sia per mancanza di tempo essendo un test per un colloquio, sia perchè conosci i principi, ma cerco sempre di applicarli in maniera flessibile, per non cadere nell'errore fare Over-engineering, nella fase iniziale, ho messo queste due logiche nello stesso servizio, perchè strettamente correlate. ( Se volete possiamo discute del motivo della scelta ). 
+
 ```php
 /* Ho messo i limiti come costanti in quanto pensando ad uno sviluppo successivo del sistema la maniera più corretta sarebbe creare un altra entita
 che gestisca questo tipo di filtro, pensando magari che in base all'utente se base o premium possano avere diverse opzioni di scelta dove magari
@@ -30,7 +32,25 @@ const MAX_TICKET_TRANSACTION = 4;
 const MAX_EVENT_TRANSACTION  = 2;
 ```
 
-### purchaseTicket
+## Logging
+Andrebbero implementati i log di debug con il LoggerInterface di Symfony
+
+## DTO
+Utilizzati in maniera non totalmente tradizionale, ma secondo me molto più funzionale e concreta (se volete possiamo discuterne)
+
+## Exception
+A parte la classica gestione delle eccezioni di errore.
+Ho unato le exception custom, per gestire le "eccezioni" logiche del processo di acquisti dei ticket, lo scopo era quello di rendere più leggibile il progesso e meno sovrastutturato possibile, per risolve problematiche di debug e gestione del codice. In particolar modo per evitare di avere try catch annidati che tornano poi un risultato al chiamante e dover portare tutti questi risultati fino al controller. Questo è stato un esperimento e mi piacerebbe parlarne con voi.
+
+## Interfacce
+Se il progetto dovesse avere più tipologie di acquisto es utenti gold, vip, ecc ecc.. o diversi modalita di vincoli, o di pagamento, non bisognera modificare le classe concrete reali, ma implementarte di nuove sulla base delle interfaccie definite. 
+
+## Test
+Andrebbero sviluppati test unitari che validino i vincoli di dominio richiesti
+Test funzionali:
+    - Al momento ho inserito solo un test funzionale
+
+## PurchaseTicket
 E' il servizio finale che viene invocato dall'endPoint per l'acquisti dei biglietti. In un progetto completo il frontend dovrebbe invocare prima altri endPoint, per richiedere i posti e i biglietti disponibili, farli selezionare all'utente, e poi invocare il servizio che li metta in lock fiche l'utente finisce la selezione di altri biglietti. 
 
 Oppure riservarli fino alla scadenza del tempo massimo di lock. 
